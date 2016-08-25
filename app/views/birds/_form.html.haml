@@ -1,0 +1,9 @@
+= simple_form_for(@bird) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :name
+    = f.input :family
+    = f.simple_fields_for :eggs do |e|
+      = e.input :count
+  .form-actions
+    = f.button :submit

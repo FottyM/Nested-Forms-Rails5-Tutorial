@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @bird.name
+%p
+  %b Family:
+  = @bird.family
+%p
+  %b Eggs count
+  - if @bird.family.downcase == "cobblepot"
+    = "I don't lay eggs you bloody developer, but the count is  #{@eggs.count} "
+  - else
+    = @eggs.count
+
+= link_to 'Edit', edit_bird_path(@bird)
+\|
+= link_to 'Back', birds_path
